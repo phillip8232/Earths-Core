@@ -88,14 +88,6 @@ void Editor::update(Input* input, Scene* scene, Configuration* config)
     {
         config->should_display_ids = !config->should_display_ids;
     }
-    if (input->is_button_state(Input::Button::DEBUG_SHOW_POS, Input::Button_State::PRESSED))
-    {
-        config->should_display_pos = !config->should_display_pos;
-    }
-    if (input->is_button_state(Input::Button::CHANGE_PLAYER_ZOMBIE, Input::Button_State::PRESSED))
-    {
-        //:( idk how to change the assets of player to a different asset
-    }
 }
 
 

@@ -65,12 +65,6 @@ void Input::get_input()
 			{
 				_button_state[Button::DEBUG_SHOW_IDS] = Button_State::PRESSED;
 			}
-			else if (event.syswm.msg->msg.win.wParam == ID_DEBUG_TOGGLEDISPLAYPOS) {
-				_button_state[Button::DEBUG_SHOW_POS] = Button_State::PRESSED;
-			}
-			else if (event.syswm.msg->msg.win.wParam ==  ID_PLAYER_CHANGETEXTURETOZOMBIE) {
-				_button_state[Button::CHANGE_PLAYER_ZOMBIE] = Button_State::PRESSED;
-			}
 			break;
 
 		case SDL_KEYDOWN:

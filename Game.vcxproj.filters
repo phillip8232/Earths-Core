@@ -66,73 +66,103 @@
     <ClCompile Include="circle_2D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="sound.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="portal_exit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="portal_entry.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="projectile_turret.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="projectile.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="pattern_manager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="menu_scene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="engine.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="texture.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="assets.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="animated_texture.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="asset.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="game_object.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dino.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="walking_dino.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scene.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="game_scene.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="input.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="player.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vector_2D.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
     <ClInclude Include="resource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="vector_2D.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="texture.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="editor.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="text.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="player.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="input.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="game_scene.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="editor.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="engine.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="dino.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="assets.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="asset.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="animated_texture.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="walking_dino.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="scene.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="game_object.h">
-      <Filter>Header Files</Filter>
+      <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="configuration.h">
-      <Filter>Header Files</Filter>
+      <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="circle_2D.h">
-      <Filter>Header Files</Filter>
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sound.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="portal_entry.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="portal_exit.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="projectile_turret.h">
-      <Filter>Header Files</Filter>
+      <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="projectile.h">
-      <Filter>Header Files</Filter>
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pattern_manager.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="menu_scene.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

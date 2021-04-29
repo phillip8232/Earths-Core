@@ -7,10 +7,17 @@
 #include <SDL.h>
 #include <SDL_image.h>
 #include <SDL_ttf.h>
+#include <SDL_mixer.h> 
 
 #include "texture.h"
 #include "animated_texture.h"
 #include "game_object.h"
+
+/*
+BYEEEEEEEEEEEEEEEEEEEEEEE
+#include "dino.h"
+#include "walking_dino.h"
+*/
 
 Engine::Engine(std::string window_name, Configuration* config)
 {
@@ -60,6 +67,27 @@ Engine::Engine(std::string window_name, Configuration* config)
 		std::cout << "SDL Error: " << SDL_GetError() << std::endl;
 		exit(1);
 	}
+
+	const int mixer_init_result = Mix_Init(MIX_INIT_MOD);
+	const int mixer_init_failure = 0;
+	if(mixer_init_result == mixer_init_failure)
+	{
+		std::cout << "Failed to initialize SDL Mixer" << std::endl;
+		std::cout << "SDL Error: " << SDL_GetError() << std::endl;
+		std::cout << "Mixer Error: " << Mix_GetError() << std::endl;
+		exit(1);
+	}
+
+	const int mixer_open_audio_result = Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 1024);
+	const int mixer_open_audio_success = 0;
+	if(mixer_open_audio_result != mixer_open_audio_success)
+	{
+		std::cout << "Failed to open audio" << std::endl;
+		std::cout << "SDL Error: " << SDL_GetError() << std::endl;
+		exit(1);
+	}
+
+	Mix_AllocateChannels(3);
 }
 
 Engine::~Engine()
@@ -71,6 +99,12 @@ void Engine::simulate(Uint32 milliseconds_to_simulate, Assets* assets, Scene* sc
 	simulate_AI(milliseconds_to_simulate, assets, scene, input);
 	simulate_physics(milliseconds_to_simulate, assets, scene);
 	render(milliseconds_to_simulate, assets, scene, config);
+
+	std::vector<Game_Object*> game_objects = scene->get_game_objects();
+	for(Game_Object* game_object : game_objects)
+	{
+		if(game_object->is_dirty()) scene->remove_game_object_from_scene(game_object->id());
+	}
 }
 
 void Engine::simulate_AI(Uint32 milliseconds_to_simulate, Assets* assets, Scene* scene, Input* input)
@@ -78,7 +112,7 @@ void Engine::simulate_AI(Uint32 milliseconds_to_simulate, Assets* assets, Scene*
 	std::vector<Game_Object*> game_objects = scene->get_game_objects();
 	for(Game_Object* game_object : game_objects)
 	{
-		game_object->simulate_AI(milliseconds_to_simulate, assets, input);
+		game_object->simulate_AI(milliseconds_to_simulate, assets, input, scene);
 	}
 }
 
@@ -102,9 +136,9 @@ void Engine::render(Uint32 milliseconds_to_simulate, Assets* assets, Scene* scen
 		exit(1);
 	}
 
-	const Uint8 red   = 68;
-	const Uint8 green = 69;
-	const Uint8 blue  = 103;
+	const Uint8 red   = scene->_red;
+	const Uint8 green = scene->_blue;
+	const Uint8 blue  = scene->_green;
 	const Uint8 alpha = 255;
 	const int render_color_success = 0;
 	const int render_color_result  = SDL_SetRenderDrawColor(_renderer, red, green, blue, alpha);
@@ -115,6 +149,13 @@ void Engine::render(Uint32 milliseconds_to_simulate, Assets* assets, Scene* scen
 		exit(1);
 	}
 
+	/*
+	std::vector<Game_Object*> game_objects = scene->get_game_objects();
+	for(Game_Object* game_object : game_objects)
+	{
+		game_object->render(milliseconds_to_simulate, assets, _renderer);
+	}
+	*/
 	std::vector<Game_Object*> sorted_game_objects = scene->get_game_objects();
 	const struct
 	{
@@ -127,7 +168,7 @@ void Engine::render(Uint32 milliseconds_to_simulate, Assets* assets, Scene* scen
 
 	for(Game_Object* game_object : sorted_game_objects)
 	{
-		game_object->render(milliseconds_to_simulate, assets, _renderer, config);
+		game_object->render(milliseconds_to_simulate, assets, _renderer, config, scene);
 	}
 
 	SDL_RenderPresent(_renderer);

@@ -1,6 +1,7 @@
 #include "assets.h"
 #include "texture.h"
 #include "animated_texture.h"
+#include "sound.h"
 
 #include <iostream>
 
@@ -9,6 +10,11 @@ Assets::Assets(SDL_Renderer* renderer)
 	// Cache Dino Texture.
 	{
 		Texture* texture = new Texture("Texture.Dino", "Assets/dino.png", renderer);
+		_assets[texture->id()] = texture;
+	}
+
+	{
+		Texture* texture = new Texture("Texture.Square", "Assets/square.png", renderer);
 		_assets[texture->id()] = texture;
 	}
 	
@@ -44,7 +50,7 @@ Assets::Assets(SDL_Renderer* renderer)
 	// Create player idle texture.
 	{
 		const int frame_count = 10;
-		const Uint32 frame_duration_milliseconds = 10000; // idle animation
+		const Uint32 frame_duration_milliseconds = 50;
 		Asset* player_animated_texture = new Animated_Texture("Texture.Player.Idle", "Assets/player.idle.png", renderer, frame_count, frame_duration_milliseconds);
 		_assets[player_animated_texture->id()] = player_animated_texture;
 	}
@@ -53,6 +59,50 @@ Assets::Assets(SDL_Renderer* renderer)
 	{
 		Texture* texture = new Texture("Texture.Collider", "Assets/collider.png", renderer);
 		_assets[texture->id()] = texture;
+	}
+
+	// Create collider texture
+	{
+		Texture* texture = new Texture("Texture.Invisible", "Assets/invisible.png", renderer);
+		_assets[texture->id()] = texture;
+	}
+
+
+
+	// Create music sound
+	{
+		Sound* sound = new Sound("Sound.Music", "Assets/music.wav");
+		_assets[sound->id()] = sound;
+
+		Mix_PlayChannel(0, sound->data(), -1);
+	}
+
+	// Create walking sound
+	{
+		Sound* sound = new Sound("Sound.Walking", "Assets/walking.wav");
+		_assets[sound->id()] = sound;
+	}
+
+	// Create running sound
+	{
+		Sound* sound = new Sound("Sound.Running", "Assets/running.wav");
+		_assets[sound->id()] = sound;
+	}
+
+	// Create portal entry texture.
+	{
+		const int frame_count = 8;
+		const Uint32 frame_duration_milliseconds = 100;
+		Asset* animated_texture = new Animated_Texture("Texture.Portal.Entry", "Assets/portal.green.png", renderer, frame_count, frame_duration_milliseconds);
+		_assets[animated_texture->id()] = animated_texture;
+	}
+
+	// Create portal exit texture.
+	{
+		const int frame_count = 8;
+		const Uint32 frame_duration_milliseconds = 100;
+		Asset* animated_texture = new Animated_Texture("Texture.Portal.Exit", "Assets/portal.purple.png", renderer, frame_count, frame_duration_milliseconds);
+		_assets[animated_texture->id()] = animated_texture;
 	}
 	
 }

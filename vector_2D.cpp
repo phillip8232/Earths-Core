@@ -4,8 +4,8 @@
 
 float DegreesToRads(float degree)
 {
-	float pi = 3.14159265359f;
-	return(degree * (pi / 180));
+    float pi = 3.14159265359f;
+    return (degree * (pi / 180));
 }
 
 Vector_2D::Vector_2D(float x, float y)
@@ -84,6 +84,6 @@ void Vector_2D::rotate(float angle)
 	float angle_radians = DegreesToRads(angle);
 	float initial_angle = this->angle();
 
-	_x = cosf(angle + initial_angle);
-	_y = sinf(angle + initial_angle);
+	_x = cosf(angle_radians + initial_angle);
+	_y = sinf(angle_radians + initial_angle);
 }

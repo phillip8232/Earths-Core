@@ -7,7 +7,7 @@ Text::Text(
 	SDL_Renderer* renderer, const char* text, SDL_Color color, std::string id)
 	: Asset(id)
 {
-	TTF_Font* font = TTF_OpenFont("Assets/cour.ttf", 15);
+	TTF_Font* font = TTF_OpenFont("Assets/comic.ttf", 15);
 	if(font == nullptr)
 	{
 		std::cout << "Failed to load font." << std::endl;
@@ -44,4 +44,3 @@ void Text::render(SDL_Renderer* renderer, Vector_2D translation)
 	SDL_QueryTexture(_data, nullptr, nullptr, &destination.w, &destination.h);
 	SDL_RenderCopy(renderer, _data, NULL, &destination);
 }
-

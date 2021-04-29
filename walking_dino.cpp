@@ -14,14 +14,14 @@ Walking_Dino::~Walking_Dino()
 {
 }
 
-void Walking_Dino::render(Uint32 milliseconds_to_simulate, Assets* assets, SDL_Renderer* renderer, Configuration* config)
+void Walking_Dino::render(Uint32 milliseconds_to_simulate, Assets* assets, SDL_Renderer* renderer, Configuration* config, Scene* scene)
 {
 	Animated_Texture* texture = (Animated_Texture*)assets->get_asset(_texture_id);
 	texture->update_frame(milliseconds_to_simulate);
 
-	Game_Object::render(milliseconds_to_simulate, assets, renderer, config);
+	Game_Object::render(milliseconds_to_simulate, assets, renderer, config, scene);
 }
 
-void Walking_Dino::simulate_AI(Uint32, Assets*, Input*)
+void Walking_Dino::simulate_AI(Uint32, Assets*, Input*, Scene*)
 {
 }

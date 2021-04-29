@@ -3,6 +3,7 @@
 class Vector_2D
 {
 public:
+	Vector_2D(){_x = 0; _y = 0;}
 	Vector_2D(float x, float y);
 	Vector_2D(float angle);
 

@@ -70,16 +70,15 @@ BEGIN
     BEGIN
         MENUITEM "Increase Speed",              ID_PLAYER_INCREASESPEED
         MENUITEM "Decrease Speed",              ID_PLAYER_DECREASESPEED
-        MENUITEM "Change Texture to Zombie",    ID_PLAYER_CHANGETEXTURETOZOMBIE
     END
     POPUP "Credits"
     BEGIN
         MENUITEM "Developers",                  ID_CREDITS_DEVELOPERS
+        MENUITEM "Third Party Libs",            ID_CREDITS_THIRDPARTYLIBS
     END
     POPUP "Debug"
     BEGIN
         MENUITEM "Toggle display ID",           ID_DEBUG_TOGGLEDISPLAYID
-        MENUITEM "Toggle display Pos",          ID_DEBUG_TOGGLEDISPLAYPOS
     END
 END
 
@@ -94,8 +93,8 @@ STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSM
 CAPTION "Dialog"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
-    CTEXT           "Phillip Lim",IDC_STATIC,98,33,118,21
-    PUSHBUTTON      "COOL ",IDC_BUTTON1,114,65,104,16
+    CTEXT           "James Knight",IDC_STATIC,98,33,118,21
+    PUSHBUTTON      "WOW IMPRESSIVE!",IDC_BUTTON1,114,65,104,16
 END
 
 

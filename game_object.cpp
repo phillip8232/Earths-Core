@@ -14,6 +14,8 @@ Game_Object::Game_Object(std::string id, std::string texture_id)
 	_height = 100;
 
 	_flip = SDL_FLIP_NONE;
+
+	_is_dirty = false;
 }
 Game_Object::~Game_Object()
 {
@@ -57,11 +59,13 @@ void Game_Object::simulate_physics(Uint32 milliseconds_to_simulate, Assets*, Sce
 	}
 }
 
-void Game_Object::render(Uint32, Assets* assets, SDL_Renderer* renderer, Configuration* config)
+void Game_Object::render(Uint32, Assets* assets, SDL_Renderer* renderer, Configuration* config, Scene* scene)
 {
+	if(_texture_id.length() == 0) return;
+
 	SDL_Rect destination;
-	destination.x = (int)_translation.x();
-	destination.y = (int)_translation.y();
+	destination.x = (int)(_translation.x() - scene->camera_translation().x());
+	destination.y = (int)(_translation.y() - scene->camera_translation().y());
 	destination.w = _width;
 	destination.h = _height;
 
@@ -106,22 +110,16 @@ void Game_Object::render(Uint32, Assets* assets, SDL_Renderer* renderer, Configu
 
 		collider_texture->render(renderer, nullptr, &collider_destination, SDL_FLIP_NONE);
 	}
+}
 
-	if (config->should_display_pos)
-	{
-		SDL_Color text_color;
-		text_color.r = 255;
-		text_color.g = 0;
-		text_color.b = 0;
-		text_color.a = 255;
+int Game_Object::width()
+{
+	return _width;
+}
 
-		std::string position = std::to_string(_translation.x()) + ", " + std::to_string(_translation.y());
-
-		Text id(renderer, position.c_str(), text_color, "ID.Text");
-
-		id.render(renderer, _translation + Vector_2D((float)_width / 2, (float)_height));
-	}
-
+int Game_Object::height()
+{
+	return _height;
 }
 
 Vector_2D Game_Object::translation()
@@ -134,7 +132,6 @@ Circle_2D Game_Object::collider()
 	return _collider;
 }
 
-
 void Game_Object::set_translation(Vector_2D translation)
 {
 	_translation = translation;
@@ -142,5 +139,5 @@ void Game_Object::set_translation(Vector_2D translation)
 
 void Game_Object::set_velocity(Vector_2D velocity)
 {
-	_translation = velocity;
+	_velocity = velocity;
 }

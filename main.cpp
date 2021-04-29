@@ -1,6 +1,7 @@
 #include <iostream>
 #include <chrono>
 #include <thread>
+#include <stack>
 
 #include "engine.h"
 #include "assets.h"
@@ -8,17 +9,23 @@
 #include "input.h"
 #include "editor.h"
 #include "configuration.h"
+#include "menu_scene.h"
 
 // include, test that it works with a simple test.
 
 int main(void)
 {
+	std::cout << "HELLO FROM MAIN" << std::endl;
+
 	Configuration* config = new Configuration();
-	Engine* engine        = new Engine("Game", config);
+	Engine*        engine = new Engine("Game", config);
 	Assets* assets        = new Assets(engine->renderer());
-	Scene*  game_scene    = new Game_Scene();
 	Input*  input         = new Input();
 	Editor* editor        = new Editor(L"Game");
+
+	std::stack<Scene*> scenes;
+	//scenes.push(new Menu_Scene());
+	scenes.push(new Game_Scene());
 
 	const Uint32 milliseconds_per_seconds = 1000;
 	const Uint32 frames_per_second        = 60;
@@ -31,9 +38,19 @@ int main(void)
 		Uint32 previous_frame_duration = frame_end_time_ms - frame_start_time_ms;
 		frame_start_time_ms            = SDL_GetTicks();
 
+		Scene* top_scene = scenes.top();
+
+		scenes.top()->update(engine->window());
 		input->get_input();
-		editor->update(input, game_scene, config);
-		engine->simulate(previous_frame_duration, assets, game_scene, input, config);
+		editor->update(input, top_scene, config);
+		engine->simulate(previous_frame_duration, assets, top_scene, input, config);
+
+		/*
+		if(top_scene->id() == "Menu" && input->is_button_state(Input::Button::RUNNING, Input::Button_State::PRESSED))
+		{
+			scenes.push(new Game_Scene());
+		}
+		*/
 
 		const Uint32 current_time_ms   = SDL_GetTicks();
 		const Uint32 frame_duration_ms = current_time_ms - frame_start_time_ms;

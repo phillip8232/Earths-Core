@@ -1,54 +1,50 @@
 #pragma once
 
-
 #include "projectile_turret.h"
 #include "projectile.h"
 
-Projectile_Turret::Projectile_Turret(std::string id, float direction_to_shoot, int number_of_shots, int ms_between_shots, int ms_until_next_shot)
-	: Game_Object(id, "Texture.Collider"), _direction_to_shoot(direction_to_shoot)
+Projectile_Turret::Projectile_Turret(Arguments_Projectile_Turret args)
+	: Game_Object(args.id, ""), _direction_to_shoot(args.direction_to_shoot)
 {
+	_translation = args.spawn_position;
 
-	_translation = Vector_2D(200, 200);
+	_number_of_shots = args.number_of_shots;
+	_ms_between_shots = args.ms_between_shots;
+	_ms_until_next_shot = args.ms_between_shots;
 
-	int _number_of_shots = number_of_shots;
-	int _ms_between_shots = ms_between_shots;
+	_speed_of_projectile = args.speed_of_projectile;
 
-	int _ms_until_next_shot = ms_until_next_shot;
-
-	//_collider.set_radius(_width / 5.0f);
-	//_collider.set_translation(Vector_2D(_width / 2.0f, (float)_height));
+	_rotation_between_shots = args.rotation_between_shots;
 }
 Projectile_Turret::~Projectile_Turret()
 {
 }
-void Projectile_Turret::simulate_AI(Uint32 milliseconds_to_simulate, Assets*, Input*)
+void Projectile_Turret::simulate_AI(Uint32 milliseconds_to_simulate, Assets*, Input*, Scene* scene)
 {
 	_ms_until_next_shot -= milliseconds_to_simulate;
 	bool should_shoot = _ms_until_next_shot <= 0;
-
-	if (should_shoot)
+	if(should_shoot)
 	{
-		Game_Object* projectile = new Projectile();
-		projectile->set_translation(_translation);
+		Game_Object* projectile = new Projectile(_translation);
 
-		Vector_2D project_velocity = Vector_2D(_direction_to_shoot);
-		project_velocity.scale(100);
-		projectile->set_velocity(project_velocity);
+		Vector_2D projectile_velocity = Vector_2D(_direction_to_shoot);
+		projectile_velocity.scale(_speed_of_projectile);
+		projectile->set_velocity(projectile_velocity);
 
-		//scene is undefined 
 		scene->add_game_object_to_scene(projectile);
 
-
 		_ms_until_next_shot = _ms_between_shots;
+
 		bool should_kill_self = _number_of_shots == 0;
-		if (should_kill_self) 
+		if(should_kill_self)
 		{
-			// kill ourselves.
+			_is_dirty = true;
 		}
 
 		float angle = _direction_to_shoot.angle();
 
-		_direction_to_shoot.rotate(15);
-	}
+		_direction_to_shoot.rotate(_rotation_between_shots);
 
+		_number_of_shots -= 1;
+	}
 }

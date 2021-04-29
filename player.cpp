@@ -1,11 +1,18 @@
 #pragma once
 
 #include "player.h"
+#include "sound.h"
+
+#include <iostream>
+
+#include <SDL_mixer.h>
 
 Player::Player(std::string id)
 	: Game_Object(id, "Texture.Player.Walking")
 {
 	_speed = 0.1f;
+
+	_translation = Vector_2D(0, 0);
 
 	_collider.set_radius(_width / 5.0f);
 	_collider.set_translation(Vector_2D(_width / 2.0f, (float)_height));
@@ -16,15 +23,15 @@ Player::~Player()
 {
 }
 
-void Player::render(Uint32 milliseconds_to_simulate, Assets* assets, SDL_Renderer* renderer, Configuration* config)
+void Player::render(Uint32 milliseconds_to_simulate, Assets* assets, SDL_Renderer* renderer, Configuration* config, Scene* scene)
 {
 	Animated_Texture* texture = (Animated_Texture*)assets->get_asset(_texture_id);
 	texture->update_frame(milliseconds_to_simulate);
 
-	Game_Object::render(milliseconds_to_simulate, assets, renderer, config);
+	Game_Object::render(milliseconds_to_simulate, assets, renderer, config, scene);
 }
 
-void Player::simulate_AI(Uint32, Assets* assets, Input* input)
+void Player::simulate_AI(Uint32, Assets* assets, Input* input, Scene*)
 {
 	switch(_state.top())
 	{
@@ -110,22 +117,31 @@ void Player::pop_state(Assets* assets)
 	handle_enter_state(_state.top(), assets);
 }
 
-void Player::handle_enter_state(State state, Assets*)
+void Player::handle_enter_state(State state, Assets* assets)
 {
 	switch(state)
 	{
 		case State::Idle:
 			_texture_id = "Texture.Player.Idle";
 			break;
-
 		case State::Walking:
+		{
 			_texture_id = "Texture.Player.Walking";
 			_speed = 0.15f;
+			const int walking_channel = 1;
+			Sound* sound = (Sound*)assets->get_asset("Sound.Walking");
+			Mix_PlayChannel(walking_channel, sound->data(), -1);
 			break;
+		}
 		case State::Running:
+		{
 			_texture_id = "Texture.Player.Running";
 			_speed = 0.3f;
+			const int running_channel = 2;
+			Sound* sound = (Sound*)assets->get_asset("Sound.Running");
+			Mix_PlayChannel(running_channel, sound->data(), -1);
 			break;
+		}
 	}
 }
 
@@ -136,8 +152,16 @@ void Player::handle_exit_state(State state, Assets*)
 		case State::Idle:
 			break;
 		case State::Walking:
+		{
+			const int walking_channel = 1;
+			Mix_HaltChannel(walking_channel);
 			break;
+		}
 		case State::Running:
+		{
+			const int running_channel = 2;
+			Mix_HaltChannel(running_channel);
 			break;
+		}
 	}
 }

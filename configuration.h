@@ -3,7 +3,6 @@
 struct Configuration
 {
 	bool should_display_ids = false;
-	bool should_display_pos = false;
 	bool should_display_colliders = false;
 
 	int window_width  = 800;
