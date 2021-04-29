@@ -26,6 +26,9 @@ Game_Scene::Game_Scene()
 	_game_objects[portal_exit->id()] = portal_exit;
 	*/
 
+	Game_Object* player = new Player("Player");
+	_game_objects[player->id()] = player;
+
 	add_game_object_to_scene(new Pattern_Manager("Patter_Manager0", 1000, 4000, Vector_2D(400, 400)));
 	add_game_object_to_scene(new Pattern_Manager("Patter_Manager1", 5000, 4000, Vector_2D(100, 100)));
 	add_game_object_to_scene(new Pattern_Manager("Patter_Manager2", 6000, 6000, Vector_2D(600, 600)));
@@ -46,4 +49,4 @@ void Game_Scene::update(SDL_Window*)
 
 	_camera_translation = Vector_2D(-w / 2.f + player->width() / 2.f, -h / 2.f + player->height() / 2.f) + player->translation();
 	*/
-	}
+}

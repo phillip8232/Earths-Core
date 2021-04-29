@@ -1,28 +1,2 @@
-﻿  animated_texture.cpp
-  asset.cpp
-  assets.cpp
-  circle_2D.cpp
-  dino.cpp
-  editor.cpp
-  engine.cpp
-  game_object.cpp
-  game_scene.cpp
-  input.cpp
-  main.cpp
-  menu_scene.cpp
-  pattern_manager.cpp
-  player.cpp
-  portal_entry.cpp
-  portal_exit.cpp
-  projectile.cpp
-  projectile_turret.cpp
-  scene.cpp
-  sound.cpp
-  Generating Code...
-  Compiling...
-  text.cpp
-  texture.cpp
-  vector_2D.cpp
-  walking_dino.cpp
-  Generating Code...
+﻿  assets.cpp
   Game.vcxproj -> D:\AIT\Basic Game Engine Programming\9157_earths_core\Game\x64\Debug\Game.exe
