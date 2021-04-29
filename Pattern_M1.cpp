@@ -1,9 +1,9 @@
 #pragma once
 
-#include "pattern_manager.h"
+#include "Pattern_M1.h"
 #include "projectile_turret.h"
 
-Pattern_Manager::Pattern_Manager(std::string id, int ms_until_start, int ms_until_end, Vector_2D spawn_position)
+Pattern_M1::Pattern_M1(std::string id, int ms_until_start, int ms_until_end, Vector_2D spawn_position)
 	: Game_Object(id, "")
 {
 	_ms_until_start = ms_until_start;
@@ -11,14 +11,14 @@ Pattern_Manager::Pattern_Manager(std::string id, int ms_until_start, int ms_unti
 	_started = false;
 	_translation = spawn_position;
 }
-Pattern_Manager::~Pattern_Manager()
+Pattern_M1::~Pattern_M1()
 {
 }
-void Pattern_Manager::simulate_AI(Uint32 milliseconds_to_simulate, Assets*, Input*, Scene* scene)
+void Pattern_M1::simulate_AI(Uint32 milliseconds_to_simulate, Assets*, Input*, Scene* scene)
 {
 	_ms_until_start -= milliseconds_to_simulate;
 	bool should_start = _ms_until_start <= 0;
-	if(!_started && should_start)
+	if (!_started && should_start)
 	{
 		Arguments_Projectile_Turret args;
 		args.direction_to_shoot = 0;
@@ -48,14 +48,14 @@ void Pattern_Manager::simulate_AI(Uint32 milliseconds_to_simulate, Assets*, Inpu
 		_started = true;
 	}
 
-	if(_started)
+	if (_started)
 	{
-		_ms_until_end   -= milliseconds_to_simulate;
+		_ms_until_end -= milliseconds_to_simulate;
 		bool should_kill_self = _ms_until_end <= 0;
-		if(should_kill_self)
+		if (should_kill_self)
 		{
 			_is_dirty = true;
 		}
 	}
-	
+
 }

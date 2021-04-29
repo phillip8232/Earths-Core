@@ -30,9 +30,10 @@ Game_Scene::Game_Scene()
 	_game_objects[player->id()] = player;
 
 	add_game_object_to_scene(new Pattern_Manager("Patter_Manager0", 1000, 4000, Vector_2D(400, 400)));
-	add_game_object_to_scene(new Pattern_Manager("Patter_Manager1", 5000, 4000, Vector_2D(100, 100)));
-	add_game_object_to_scene(new Pattern_Manager("Patter_Manager2", 6000, 6000, Vector_2D(600, 600)));
-	add_game_object_to_scene(new Pattern_Manager("Patter_Manager3", 7000, 3000, Vector_2D(100, 400)));
+	add_game_object_to_scene(new Pattern_Manager("Patter_Manager1", 2000, 4000, Vector_2D(100, 100)));
+	add_game_object_to_scene(new Pattern_Manager("Patter_Manager2", 3000, 6000, Vector_2D(600, 600)));
+	add_game_object_to_scene(new Pattern_Manager("Patter_Manager3", 4000, 3000, Vector_2D(100, 400)));
+	add_game_object_to_scene(new Pattern_Manager("name			 ", 5000, 3000, Vector_2D(500, 400)));
 }
 
 Game_Scene::~Game_Scene()

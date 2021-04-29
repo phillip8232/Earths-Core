@@ -10,8 +10,8 @@ int Projectile::next_id = 0;
 Projectile::Projectile(Vector_2D spawn_position)
 	: Game_Object(std::string("Projectile") + std::to_string(Projectile::next_id++), "Texture.Collider"), _spawn_position(spawn_position)
 {
-	_width = 50;
-	_height = 50;
+	_width = 30;
+	_height = 30;
 
 	_translation = spawn_position;
 }

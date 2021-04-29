@@ -28,9 +28,9 @@ public:
 
 	std::string id();
 
-	Uint8 _red   = 255;
-	Uint8 _green = 0;
-	Uint8 _blue  = 255;
+	Uint8 _red   = 80;
+	Uint8 _green = 120;
+	Uint8 _blue  = 170;
 
 protected:
 	std::map<std::string, Game_Object*> _game_objects;

@@ -71,10 +71,10 @@ Assets::Assets(SDL_Renderer* renderer)
 
 	// Create music sound
 	{
-		Sound* sound = new Sound("Sound.Music", "Assets/AdventureOfFruit.mp3");
-		_assets[sound->id()] = sound;
+		//Sound* sound = new Sound("Sound.Music", "Assets/AdventureOfFruit.mp3");
+		//_assets[sound->id()] = sound;
 
-		Mix_PlayChannel(0, sound->data(), -1);
+		//Mix_PlayChannel(0, sound->data(), -1);
 	}
 
 	// Create walking sound

@@ -15,13 +15,13 @@
 
 int main(void)
 {
-	std::cout << "HELLO FROM MAIN" << std::endl;
+	std::cout << "Game is Starting" << std::endl;
 
 	Configuration* config = new Configuration();
 	Engine*        engine = new Engine("Game", config);
-	Assets* assets        = new Assets(engine->renderer());
-	Input*  input         = new Input();
-	Editor* editor        = new Editor(L"Game");
+	Assets*		   assets = new Assets(engine->renderer());
+	Input*		   input  = new Input();
+	Editor*		   editor = new Editor(L"Game");
 
 	std::stack<Scene*> scenes;
 	//scenes.push(new Menu_Scene());

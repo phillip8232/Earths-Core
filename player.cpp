@@ -12,7 +12,7 @@ Player::Player(std::string id)
 {
 	_speed = 0.1f;
 
-	_translation = Vector_2D(0, 0);
+	_translation = Vector_2D(350, 500);
 
 	_collider.set_radius(_width / 5.0f);
 	_collider.set_translation(Vector_2D(_width / 2.0f, (float)_height));
@@ -129,7 +129,7 @@ void Player::handle_enter_state(State state, Assets* assets)
 			_texture_id = "Texture.Player.Walking";
 			_speed = 0.15f;
 			const int walking_channel = 1;
-			Sound* sound = (Sound*)assets->get_asset("Sound.Walking");
+			Sound* sound = (Sound*)assets->get_asset("Sound.Walking"); //sound for walking
 			Mix_PlayChannel(walking_channel, sound->data(), -1);
 			break;
 		}
@@ -138,10 +138,11 @@ void Player::handle_enter_state(State state, Assets* assets)
 			_texture_id = "Texture.Player.Running";
 			_speed = 0.3f;
 			const int running_channel = 2;
-			Sound* sound = (Sound*)assets->get_asset("Sound.Running");
+			Sound* sound = (Sound*)assets->get_asset("Sound.Running"); //how the sound gets called
 			Mix_PlayChannel(running_channel, sound->data(), -1);
 			break;
 		}
+		//shoot sound effect next
 	}
 }
 
