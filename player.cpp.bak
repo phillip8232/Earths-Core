@@ -1,0 +1,56 @@
+#pragma once
+
+#include "player.h"
+
+Player::Player(std::string id) : Game_Object(id, "Texture.Player.Walking")
+{
+	_speed = 0.1f;
+}
+Player::~Player()
+{
+}
+
+void Player::render(Uint32 milliseconds_to_simulate, Assets* assets, SDL_Renderer* renderer, Configuration* config)
+{
+	Animated_Texture* texture = (Animated_Texture*)assets->get_asset(_texture_id);
+	texture->update_frame(milliseconds_to_simulate);
+
+	Game_Object::render(milliseconds_to_simulate, assets, renderer, config);
+}
+
+void Player::simulate_AI(Uint32, Assets*, Input* input)
+{
+	_velocity = Vector_2D(0, 0);
+
+	if(input->is_button_state(Input::Button::RIGHT, Input::Button_State::DOWN))
+	{
+		_velocity += Vector_2D(1.0f, 0);
+	}
+
+	if(input->is_button_state(Input::Button::LEFT, Input::Button_State::DOWN))
+	{
+		_velocity += Vector_2D(-1.0f, 0);
+	}
+
+	if(input->is_button_state(Input::Button::UP, Input::Button_State::DOWN))
+	{
+		_velocity += Vector_2D(0, -1.0f);
+	}
+
+	if(input->is_button_state(Input::Button::DOWN, Input::Button_State::DOWN))
+	{
+		_velocity += Vector_2D(0, 1.0f);
+	}
+
+	_velocity.normalize();
+	_velocity.scale(_speed);
+}
+
+void Player::set_speed(float speed)
+{
+	_speed = speed;
+}
+float Player::speed()
+{
+	return _speed;
+}

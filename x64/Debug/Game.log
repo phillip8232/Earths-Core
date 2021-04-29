@@ -1,0 +1,20 @@
+﻿  game_scene.cpp
+  projectile.cpp
+D:\AIT\Basic Game Engine Programming\9157_phillip_tut6\Game\projectile.cpp(18,37): error C2220: the following warning is treated as an error
+D:\AIT\Basic Game Engine Programming\9157_phillip_tut6\Game\projectile.cpp(18,37): warning C4100: 'milliseconds_to_simulate': unreferenced formal parameter
+  projectile_turret.cpp
+D:\AIT\Basic Game Engine Programming\9157_phillip_tut6\Game\projectile_turret.cpp(13,25): error C2220: the following warning is treated as an error
+D:\AIT\Basic Game Engine Programming\9157_phillip_tut6\Game\projectile_turret.cpp(13,25): warning C4458: declaration of '_number_of_shots' hides class member
+D:\AIT\Basic Game Engine Programming\9157_phillip_tut6\Game\projectile_turret.h(16,6): message : see declaration of 'Projectile_Turret::_number_of_shots'
+D:\AIT\Basic Game Engine Programming\9157_phillip_tut6\Game\projectile_turret.cpp(14,26): warning C4458: declaration of '_ms_between_shots' hides class member
+D:\AIT\Basic Game Engine Programming\9157_phillip_tut6\Game\projectile_turret.h(17,6): message : see declaration of 'Projectile_Turret::_ms_between_shots'
+D:\AIT\Basic Game Engine Programming\9157_phillip_tut6\Game\projectile_turret.cpp(16,28): warning C4458: declaration of '_ms_until_next_shot' hides class member
+D:\AIT\Basic Game Engine Programming\9157_phillip_tut6\Game\projectile_turret.h(19,6): message : see declaration of 'Projectile_Turret::_ms_until_next_shot'
+D:\AIT\Basic Game Engine Programming\9157_phillip_tut6\Game\projectile_turret.cpp(13,6): warning C4189: '_number_of_shots': local variable is initialized but not referenced
+D:\AIT\Basic Game Engine Programming\9157_phillip_tut6\Game\projectile_turret.cpp(16,6): warning C4189: '_ms_until_next_shot': local variable is initialized but not referenced
+D:\AIT\Basic Game Engine Programming\9157_phillip_tut6\Game\projectile_turret.cpp(14,6): warning C4189: '_ms_between_shots': local variable is initialized but not referenced
+D:\AIT\Basic Game Engine Programming\9157_phillip_tut6\Game\projectile_turret.cpp(44,29): error C2228: left of '.rotate' must have class/struct/union
+D:\AIT\Basic Game Engine Programming\9157_phillip_tut6\Game\projectile_turret.cpp(44,29): message : type is 'float'
+  scene.cpp
+  walking_dino.cpp
+  Generating Code...
