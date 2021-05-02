@@ -51,6 +51,7 @@ Earth's core was idea was from the hollow earth theory and I just wanted to crea
 - Wave System / rounds
 - Enemies
 - Powerup
+- Death / restart
 
 ## Known Issues
 
