@@ -2,9 +2,14 @@
 #include "dino.h"
 #include "walking_dino.h"
 #include "player.h"
-#include "portal_entry.h"
-#include "portal_exit.h"
+
+
+//patterns
 #include "pattern_manager.h"
+#include "pattern_m1.h"
+#include "pattern_m2.h"
+#include "pattern_m3.h"
+#include "pattern_m4.h"
 
 Game_Scene::Game_Scene()
 	: Scene("Game")
@@ -29,11 +34,70 @@ Game_Scene::Game_Scene()
 	Game_Object* player = new Player("Player");
 	_game_objects[player->id()] = player;
 
-	add_game_object_to_scene(new Pattern_Manager("Patter_Manager0", 1000, 4000, Vector_2D(400, 400)));
-	add_game_object_to_scene(new Pattern_Manager("Patter_Manager1", 2000, 4000, Vector_2D(100, 100)));
-	add_game_object_to_scene(new Pattern_Manager("Patter_Manager2", 3000, 6000, Vector_2D(600, 600)));
-	add_game_object_to_scene(new Pattern_Manager("Patter_Manager3", 4000, 3000, Vector_2D(100, 400)));
-	add_game_object_to_scene(new Pattern_Manager("name			 ", 5000, 3000, Vector_2D(500, 400)));
+	//add_game_object_to_scene(new Pattern_Manager("Patter_Manager0", 1000, 4000, Vector_2D(400, 400)));
+	//add_game_object_to_scene(new Pattern_Manager("Patter_Manager1", 2000, 4000, Vector_2D(100, 100)));
+	//add_game_object_to_scene(new Pattern_Manager("Patter_Manager2", 3000, 6000, Vector_2D(600, 600)));
+	//add_game_object_to_scene(new Pattern_Manager("Patter_Manager3", 4000, 3000, Vector_2D(100, 400)));
+	//add_game_object_to_scene(new Pattern_Manager("name			 ", 5000, 3000, Vector_2D(500, 400)));
+
+	// different waves 
+	
+	// Survive 10 waves to win
+	
+
+	//WAVE1
+	add_game_object_to_scene(new Pattern_M1("1 ",100, 0, Vector_2D(0,0)));
+	add_game_object_to_scene(new Pattern_M2("2 ",200, 0, Vector_2D(0,0)));
+
+	add_game_object_to_scene(new Pattern_M1("3 ",1000, 0, Vector_2D(0, 0)));
+	add_game_object_to_scene(new Pattern_M2("4 ",1200, 0, Vector_2D(0, 0)));
+
+	add_game_object_to_scene(new Pattern_M1("5 ", 3000, 1000, Vector_2D(0, 0)));
+	add_game_object_to_scene(new Pattern_M2("6 ", 4000, 0, Vector_2D(0, 0)));
+
+	add_game_object_to_scene(new Pattern_M3("7 ", 6000, 2000, Vector_2D(0, 0)));
+	add_game_object_to_scene(new Pattern_M4("8 ", 6000, 3000, Vector_2D(0, 0)));
+
+
+
+
+	//WAVE2
+
+
+
+	//WAVE3
+
+
+
+	//WAVE4
+
+
+
+	//WAVE5
+
+
+	//WAVE6
+
+
+
+	//WAVE7
+
+
+
+	//WAVE8
+
+
+
+
+	//WAVE9
+
+
+
+	//WAVE10
+
+
+
+	//add_game_object_to_scene(new Pattern_M2("caerwea ", 1000, 1000, Vector_2D(200, 200)));
 }
 
 Game_Scene::~Game_Scene()

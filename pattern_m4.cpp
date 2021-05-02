@@ -1,9 +1,9 @@
 #pragma once
 
-#include "Pattern_M1.h"
+#include "Pattern_M4.h"
 #include "projectile_turret.h"
 
-Pattern_M1::Pattern_M1(std::string id, int ms_until_start, int ms_until_end, Vector_2D spawn_position)
+Pattern_M4::Pattern_M4(std::string id, int ms_until_start, int ms_until_end, Vector_2D spawn_position)
 	: Game_Object(id, "")
 {
 	_ms_until_start = ms_until_start;
@@ -11,10 +11,10 @@ Pattern_M1::Pattern_M1(std::string id, int ms_until_start, int ms_until_end, Vec
 	_started = false;
 	_translation = spawn_position;
 }
-Pattern_M1::~Pattern_M1()
+Pattern_M4::~Pattern_M4()
 {
 }
-void Pattern_M1::simulate_AI(Uint32 milliseconds_to_simulate, Assets*, Input*, Scene* scene)
+void Pattern_M4::simulate_AI(Uint32 milliseconds_to_simulate, Assets*, Input*, Scene* scene)
 {
 	_ms_until_start -= milliseconds_to_simulate;
 	bool should_start = _ms_until_start <= 0;
@@ -22,9 +22,9 @@ void Pattern_M1::simulate_AI(Uint32 milliseconds_to_simulate, Assets*, Input*, S
 	{
 		Arguments_Projectile_Turret args;
 		args.direction_to_shoot = 0;
-		args.ms_between_shots = 500;
+		args.ms_between_shots = 1000;
 		args.number_of_shots = _ms_until_end / args.ms_between_shots;
-		args.speed_of_projectile = 0.45f;
+		args.speed_of_projectile = 0.25f;
 		args.rotation_between_shots = 0.f;
 
 		//yeah gonna be alot of position changes
@@ -32,39 +32,49 @@ void Pattern_M1::simulate_AI(Uint32 milliseconds_to_simulate, Assets*, Input*, S
 
 
 		args.spawn_position = Vector_2D(0, 0);
-		args.id = "Projectile_Turret1";
+		args.id = "Projectile_Slow1";
 		scene->add_game_object_to_scene(new Projectile_Turret(args));
 
+		args.speed_of_projectile = 0.35f;
 		args.spawn_position = Vector_2D(200, 0);
-		args.id = "Projectile_Turret2";
+		args.id = "Projectile_Slow2";
 		scene->add_game_object_to_scene(new Projectile_Turret(args));
 
+		args.speed_of_projectile = 0.25f;
 		args.spawn_position = Vector_2D(400, 0);
-		args.id = "Projectile_Turret3";
+		args.id = "Projectile_Slow3";
 		scene->add_game_object_to_scene(new Projectile_Turret(args));
 
+		args.speed_of_projectile = 0.35f;
 		args.spawn_position = Vector_2D(600, 0);
-		args.id = "Projectile_Turret4";
+		args.id = "Projectile_Slow4";
 		scene->add_game_object_to_scene(new Projectile_Turret(args));
 
+
+		args.speed_of_projectile = 0.25f;
 		args.spawn_position = Vector_2D(800, 0);
-		args.id = "Projectile_Turret5";
+		args.id = "Projectile_Slow5";
 		scene->add_game_object_to_scene(new Projectile_Turret(args));
 
+		args.speed_of_projectile = 0.35f;
 		args.spawn_position = Vector_2D(1000, 0);
-		args.id = "Projectile_Turret6";
+		args.id = "Projectile_Slow6";
 		scene->add_game_object_to_scene(new Projectile_Turret(args));
 
+
+		args.speed_of_projectile = 0.25f;
 		args.spawn_position = Vector_2D(1200, 0);
-		args.id = "Projectile_Turret7";
+		args.id = "Projectile_Slow7";
 		scene->add_game_object_to_scene(new Projectile_Turret(args));
 
+		args.speed_of_projectile = 0.35f;
 		args.spawn_position = Vector_2D(1400, 0);
-		args.id = "Projectile_Turret8";
+		args.id = "Projectile_Slow8";
 		scene->add_game_object_to_scene(new Projectile_Turret(args));
 
+		args.speed_of_projectile = 0.25f;
 		args.spawn_position = Vector_2D(1580, 0);
-		args.id = "Projectile_Turret9";
+		args.id = "Projectile_Slow9";
 		scene->add_game_object_to_scene(new Projectile_Turret(args));
 
 

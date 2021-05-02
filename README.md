@@ -26,7 +26,8 @@ Earth's core was idea was from the hollow earth theory and I just wanted to crea
 
 - window info, name, size
 
-Object Handling/Collision
+- Object Handling/Collision
+
 
 - 2D circle colliders 
 
@@ -46,7 +47,9 @@ Object Handling/Collision
 
 ## Future implementation
 
-
+- Gunplay
+- Enemies
+- Powerup
 
 ## Known Issues
 

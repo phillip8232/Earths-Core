@@ -12,9 +12,9 @@ Player::Player(std::string id)
 {
 	_speed = 0.1f;
 
-	_translation = Vector_2D(350, 500);
+	_translation = Vector_2D(800, 500);
 
-	_collider.set_radius(_width / 5.0f);
+	_collider.set_radius(_width / 3.0f);
 	_collider.set_translation(Vector_2D(_width / 2.0f, (float)_height));
 
 	_state.push(State::Idle);
@@ -66,6 +66,13 @@ void Player::simulate_AI(Uint32, Assets* assets, Input* input, Scene*)
 			}
 			break;
 	}
+
+	//not letting people leave playspace
+	if (_translation.x() < 0 || _translation.y() < 0 || _translation.y() > 750 || _translation.x() > 1550)
+	{
+		_translation = Vector_2D(800, 500);
+	}
+	
 
 	_velocity = Vector_2D(0, 0);
 
@@ -127,10 +134,10 @@ void Player::handle_enter_state(State state, Assets* assets)
 		case State::Walking:
 		{
 			_texture_id = "Texture.Player.Walking";
-			_speed = 0.15f;
+			_speed = 0.3f;
 			const int walking_channel = 1;
-			Sound* sound = (Sound*)assets->get_asset("Sound.Walking"); //sound for walking
-			Mix_PlayChannel(walking_channel, sound->data(), -1);
+			//Sound* sound = (Sound*)assets->get_asset("Sound.Walking"); //sound for walking
+			//Mix_PlayChannel(walking_channel, sound->data(), -1);
 			break;
 		}
 		case State::Running:
@@ -138,8 +145,8 @@ void Player::handle_enter_state(State state, Assets* assets)
 			_texture_id = "Texture.Player.Running";
 			_speed = 0.3f;
 			const int running_channel = 2;
-			Sound* sound = (Sound*)assets->get_asset("Sound.Running"); //how the sound gets called
-			Mix_PlayChannel(running_channel, sound->data(), -1);
+			//Sound* sound = (Sound*)assets->get_asset("Sound.Running"); //how the sound gets called
+			//Mix_PlayChannel(running_channel, sound->data(), -1);
 			break;
 		}
 		//shoot sound effect next
