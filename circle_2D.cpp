@@ -38,6 +38,7 @@ float Circle_2D::intersection_depth(Circle_2D other)
 
 	if(distance_to_other < (_radius + other._radius))
 	{
+	
 		return (_radius + other._radius) - distance_to_other;
 	}
 	else

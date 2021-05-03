@@ -14,6 +14,9 @@ Projectile::Projectile(Vector_2D spawn_position)
 	_height = 30;
 
 	_translation = spawn_position;
+
+	_collider.set_radius(_width / 5.0f);
+	_collider.set_translation(Vector_2D(_width / 2.0f, (float)_height));
 }
 Projectile::~Projectile()
 {

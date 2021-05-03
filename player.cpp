@@ -14,7 +14,7 @@ Player::Player(std::string id)
 
 	_translation = Vector_2D(800, 500);
 
-	_collider.set_radius(_width / 3.0f);
+	_collider.set_radius(_width / 5.0f);
 	_collider.set_translation(Vector_2D(_width / 2.0f, (float)_height));
 
 	_state.push(State::Idle);
@@ -72,6 +72,7 @@ void Player::simulate_AI(Uint32, Assets* assets, Input* input, Scene*)
 	{
 		_translation = Vector_2D(800, 500);
 	}
+	//dying when getting hit by 
 	
 
 	_velocity = Vector_2D(0, 0);
