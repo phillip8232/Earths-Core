@@ -1,6 +1,7 @@
 #pragma once
 
 #include "projectile.h"
+#include "player.h"
 
 #include <string>
 #include <iostream>
@@ -21,12 +22,28 @@ Projectile::Projectile(Vector_2D spawn_position)
 Projectile::~Projectile()
 {
 }
-void Projectile::simulate_AI(Uint32, Assets*, Input*, Scene*)
+void Projectile::simulate_AI(Uint32, Assets*, Input*, Scene* scene)
 {
-	bool should_destroy = (_translation - _spawn_position).magnitude() > 1000;
+	bool should_destroy = (_translation - _spawn_position).magnitude() > 1400;
 	if(should_destroy) this->_is_dirty = true;
 
-	// TODO: When we are out of the range of the map, we should kill ourselves!
+
+	//dying when getting hit by projectile
+
+	Game_Object* player = scene->get_game_object("Player");
+
+	Vector_2D projectile_center = _translation + Vector_2D((float)_width / 2, (float)_height / 2);
+
+	Vector_2D player_center = player->translation() + Vector_2D((float)player->width() / 2, (float)player->height() / 2);
+
+	float distance_to_player = (player_center - projectile_center).magnitude();
+
+	if (distance_to_player < 20.0f)
+	{
+		//gotta reset game scene when hit
+		std::cout << "I've been hit";
+	}
+	
 }
 
 

@@ -208,7 +208,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="..\..\tutorial_7\Game\Game.rc">
+    <ResourceCompile Include="..\..\9157_phillip_tut6\Game\Game.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
   </ItemGroup>

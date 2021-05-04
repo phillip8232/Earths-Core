@@ -214,7 +214,7 @@
     <ClInclude Include="walking_dino.h" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="..\..\tutorial_7\Game\Game.rc" />
+    <ResourceCompile Include="..\..\9157_phillip_tut6\Game\Game.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

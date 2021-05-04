@@ -77,21 +77,8 @@ void Player::simulate_AI(Uint32, Assets* assets, Input* input, Scene* scene)
 	{
 		_translation = Vector_2D(800, 500);
 	}
+	//dying when hit by projectile
 
-	//dying when getting hit by projectile
-	
-	//Game_Object* projectile = scene->get_game_object(std::string("Projectile") + std::to_string(Player::next_id++));
-
-	//Vector_2D player_center = _translation + Vector_2D((float)_width / 2, (float)_height / 2);
-
-	//Vector_2D projectile_center = projectile->translation() + Vector_2D((float)projectile->width() / 2, (float)projectile->height() / 2);
-
-	//float distance_to_player = (player_center - projectile_center).magnitude();
-
-	//if (distance_to_player < 50.0f)
-	//{
-	//	//reset scene
-	//}
 
 	
 
