@@ -15,25 +15,33 @@ Game_Scene::Game_Scene()
 	: Scene("Game")
 {
 
+	reset();
+
+	
+}
+
+void Game_Scene::reset()
+{
+	_game_objects.clear();
 
 	Game_Object* player = new Player("Player");
 	_game_objects[player->id()] = player;
 
-	Game_Object* dino = new Dino("Dino");
-	_game_objects[dino->id()] = dino;
+	//Game_Object* dino = new Dino("Dino");
+	//_game_objects[dino->id()] = dino;
 
 
-	
+
 	// Survive 10 waves to win
-	
+
 
 	//WAVE1
 	//gotta annouce the waves 
-	add_game_object_to_scene(new Pattern_M1("1 ",100, 0, Vector_2D(0,0)));
-	add_game_object_to_scene(new Pattern_M2("2 ",200, 0, Vector_2D(0,0)));
+	add_game_object_to_scene(new Pattern_M1("1 ", 100, 0, Vector_2D(0, 0)));
+	add_game_object_to_scene(new Pattern_M2("2 ", 200, 0, Vector_2D(0, 0)));
 
-	add_game_object_to_scene(new Pattern_M1("3 ",1000, 0, Vector_2D(0, 0)));
-	add_game_object_to_scene(new Pattern_M2("4 ",1200, 0, Vector_2D(0, 0)));
+	add_game_object_to_scene(new Pattern_M1("3 ", 1000, 0, Vector_2D(0, 0)));
+	add_game_object_to_scene(new Pattern_M2("4 ", 1200, 0, Vector_2D(0, 0)));
 
 	add_game_object_to_scene(new Pattern_M1("5 ", 3000, 1000, Vector_2D(0, 0)));
 	add_game_object_to_scene(new Pattern_M2("6 ", 4000, 0, Vector_2D(0, 0)));
@@ -45,7 +53,7 @@ Game_Scene::Game_Scene()
 
 
 	//WAVE2
-	
+
 
 
 	//WAVE3
@@ -79,8 +87,6 @@ Game_Scene::Game_Scene()
 	//WAVE10
 	//this is the final wave annouce that and when they get past here they win
 
-
-	
 }
 
 Game_Scene::~Game_Scene()

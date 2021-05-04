@@ -27,6 +27,7 @@ public:
 	void pop_state(Assets* assets);
 
 private:
+	
 	void handle_enter_state(State state, Assets* assets);
 	void handle_exit_state(State state, Assets* assets);
 

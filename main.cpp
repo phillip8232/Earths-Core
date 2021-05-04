@@ -6,10 +6,12 @@
 #include "engine.h"
 #include "assets.h"
 #include "game_scene.h"
+#include "game_over_scene.h"
 #include "input.h"
 #include "editor.h"
 #include "configuration.h"
 #include "menu_scene.h"
+#include "scene_manager.h"
 
 // include, test that it works with a simple test.
 
@@ -21,11 +23,14 @@ int main(void)
 	Engine*        engine = new Engine("Game", config);
 	Assets*		   assets = new Assets(engine->renderer());
 	Input*		   input  = new Input();
-	Editor*		   editor = new Editor(L"Game");
+	Editor*		   editor = new Editor(L"Game"); 
+	Scene_manager* scene_manager = new Scene_manager();
 
-	std::stack<Scene*> scenes;
-	//scenes.push(new Menu_Scene());
-	scenes.push(new Game_Scene());
+	scene_manager->add_scene(new Game_Scene());
+	scene_manager->add_scene(new Game_Over_Scene());
+	scene_manager->set_current_scene("Game");
+
+	
 
 	const Uint32 milliseconds_per_seconds = 1000;
 	const Uint32 frames_per_second        = 60;
@@ -38,19 +43,12 @@ int main(void)
 		Uint32 previous_frame_duration = frame_end_time_ms - frame_start_time_ms;
 		frame_start_time_ms            = SDL_GetTicks();
 
-		Scene* top_scene = scenes.top();
+		
 
-		scenes.top()->update(engine->window());
+		
 		input->get_input();
-		editor->update(input, top_scene, config);
-		engine->simulate(previous_frame_duration, assets, top_scene, input, config);
-
-		/*
-		if(top_scene->id() == "Menu" && input->is_button_state(Input::Button::RUNNING, Input::Button_State::PRESSED))
-		{
-			scenes.push(new Game_Scene());
-		}
-		*/
+		editor->update(input, scene_manager->current_scene(), config);
+		engine->simulate(previous_frame_duration, assets, scene_manager->current_scene(), input, config);
 
 		const Uint32 current_time_ms   = SDL_GetTicks();
 		const Uint32 frame_duration_ms = current_time_ms - frame_start_time_ms;

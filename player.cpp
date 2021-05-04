@@ -1,15 +1,20 @@
 #pragma once
-
 #include "player.h"
 #include "sound.h"
 
 #include <iostream>
 
+
+#include "projectile.h"
 #include <SDL_mixer.h>
+
+
+
 
 Player::Player(std::string id)
 	: Game_Object(id, "Texture.Player.Walking")
 {
+	
 	_speed = 0.1f;
 
 	_translation = Vector_2D(800, 500);
@@ -31,7 +36,7 @@ void Player::render(Uint32 milliseconds_to_simulate, Assets* assets, SDL_Rendere
 	Game_Object::render(milliseconds_to_simulate, assets, renderer, config, scene);
 }
 
-void Player::simulate_AI(Uint32, Assets* assets, Input* input, Scene*)
+void Player::simulate_AI(Uint32, Assets* assets, Input* input, Scene* scene)
 {
 	switch(_state.top())
 	{
@@ -72,10 +77,27 @@ void Player::simulate_AI(Uint32, Assets* assets, Input* input, Scene*)
 	{
 		_translation = Vector_2D(800, 500);
 	}
-	//dying when getting hit by 
+
+	//dying when getting hit by projectile
+	
+	//Game_Object* projectile = scene->get_game_object(std::string("Projectile") + std::to_string(Player::next_id++));
+
+	//Vector_2D player_center = _translation + Vector_2D((float)_width / 2, (float)_height / 2);
+
+	//Vector_2D projectile_center = projectile->translation() + Vector_2D((float)projectile->width() / 2, (float)projectile->height() / 2);
+
+	//float distance_to_player = (player_center - projectile_center).magnitude();
+
+	//if (distance_to_player < 50.0f)
+	//{
+	//	//reset scene
+	//}
+
 	
 
-	_velocity = Vector_2D(0, 0);
+	
+
+	
 
 	if(input->is_button_state(Input::Button::RIGHT, Input::Button_State::DOWN))
 	{
