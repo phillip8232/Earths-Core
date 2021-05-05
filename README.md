@@ -4,8 +4,6 @@
 
 GitHub Link - [phillip8232/Earths-Core: SDL Game. (github.com)](https://github.com/phillip8232/Earths-Core)
 
-Table of content (currently not working correctly)
-
 - [Earth-core](#Earth-core)
   - [Summary](#summary)
    - [Engine System](#engine-system)
