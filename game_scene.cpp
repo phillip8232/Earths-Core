@@ -31,6 +31,7 @@ void Game_Scene::reset()
 	//WAVE1
 
 	//gotta annouce the waves <- I have not completed this sorry I was working on making the levels playable at least
+	//also the reason why im not using the spawn until end part is it overlaps with them seleves when I want to call them a second time.
 
 
 	add_game_object_to_scene(new Pattern_M5("1 ", 100, 0, Vector_2D(0, 0))); //0.1 second into the game we start the game
@@ -60,6 +61,7 @@ void Game_Scene::reset()
 
 
 
+
 	//WAVE3
 
 
@@ -68,27 +70,8 @@ void Game_Scene::reset()
 
 
 
-	//WAVE5
+	//WAVE5 FINAL WAVE
 
-
-	//WAVE6
-
-
-
-	//WAVE7
-
-
-
-	//WAVE8
-
-
-
-
-	//WAVE9
-
-
-
-	//WAVE10 THE FINAL WAVE
 	
 
 }
