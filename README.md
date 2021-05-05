@@ -81,7 +81,7 @@ Earth's core was idea was from the hollow earth theory and I just wanted to crea
 
 **Projectiles**
 
-`<img src="https://raw.githubusercontent.com/phillip8232/Earths-Core/master/Assets/collider.png" width="200" height="200" />`
+<img src="https://raw.githubusercontent.com/phillip8232/Earths-Core/master/Assets/collider.png" width="100" height="100" />
 
 
 
