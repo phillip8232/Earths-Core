@@ -4,6 +4,8 @@
 
 GitHub Link - [phillip8232/Earths-Core: SDL Game. (github.com)](https://github.com/phillip8232/Earths-Core)
 
+Table of content (currently not working)
+
 [TOC]
 
 ## Summary
@@ -61,8 +63,15 @@ Earth's core was idea was from the hollow earth theory and I just wanted to crea
 ## Known Issues
 
 - Lags when too many object are on screen
+- Sometimes you can collide with projectiles without game resetting.
 
-## Gameplay snapshots
+## Gameplay snapshots / Assets / game audio
+
+#### **Music** - Jeremy Blake - Powerup! ♫ NO COPYRIGHT 8-bit Music
+
+### Assets
+
+![Player Sprite Sheet]([Earths-Core/player.walking.png at master · phillip8232/Earths-Core (github.com)](https://github.com/phillip8232/Earths-Core/blob/master/Assets/player.walking.png))
 
 
 
