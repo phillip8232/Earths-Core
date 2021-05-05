@@ -91,7 +91,7 @@ Earth's core was idea was from the hollow earth theory and I just wanted to crea
 
 **Winning Screen**
 
-<img src="https://raw.githubusercontent.com/phillip8232/Earths-Core/master/Assets/Win.png" width="400" height="400" />
+<img src="https://raw.githubusercontent.com/phillip8232/Earths-Core/master/Assets/Win.png" width="300" height="300" />
 
 
 ## Developer Info
