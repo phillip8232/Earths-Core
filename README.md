@@ -71,7 +71,7 @@ Earth's core was idea was from the hollow earth theory and I just wanted to crea
 
 ### Assets
 
-![Player Sprite Sheet]([Earths-Core/player.walking.png at master · phillip8232/Earths-Core (github.com)](https://github.com/phillip8232/Earths-Core/blob/master/Assets/player.walking.png))
+![PlayerSpriteSheet]([Earths-Core/player.walking.png at master · phillip8232/Earths-Core (github.com)](https://github.com/phillip8232/Earths-Core/blob/master/Assets/player.walking.png))
 
 
 
