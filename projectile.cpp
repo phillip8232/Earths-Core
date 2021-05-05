@@ -38,10 +38,11 @@ void Projectile::simulate_AI(Uint32, Assets*, Input*, Scene* scene)
 
 	float distance_to_player = (player_center - projectile_center).magnitude();
 
-	if (distance_to_player < 20.0f)
+	if (distance_to_player < 30.0f)
 	{
 		//gotta reset game scene when hit
-		std::cout << "I've been hit";
+		std::cout << "You've been hit";
+		scene->reset();
 	}
 	
 }

@@ -17,7 +17,7 @@ Player::Player(std::string id)
 	
 	_speed = 0.1f;
 
-	_translation = Vector_2D(800, 500);
+	_translation = Vector_2D(750, 500);
 
 	_collider.set_radius(_width / 5.0f);
 	_collider.set_translation(Vector_2D(_width / 2.0f, (float)_height));
@@ -75,17 +75,14 @@ void Player::simulate_AI(Uint32, Assets* assets, Input* input, Scene* scene)
 	//not letting people leave playspace
 	if (_translation.x() < 0 || _translation.y() < 0 || _translation.y() > 750 || _translation.x() > 1550)
 	{
-		_translation = Vector_2D(800, 500);
+		_translation = Vector_2D(750, 500);
 	}
 	//dying when hit by projectile
 
 
 	
 
-	
-
-	
-
+	_velocity = Vector_2D(0, 0);
 	if(input->is_button_state(Input::Button::RIGHT, Input::Button_State::DOWN))
 	{
 		_velocity += Vector_2D(1.0f, 0);

@@ -102,6 +102,7 @@ void Input::get_input()
 				break;
 			}
 			break;
+
 		case SDL_KEYUP:
 			switch(event.key.keysym.scancode)
 			{
