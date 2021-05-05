@@ -71,9 +71,17 @@ Earth's core was idea was from the hollow earth theory and I just wanted to crea
 
 ### Assets
 
-![Sprite](https://raw.githubusercontent.com/phillip8232/Earths-Core/master/Assets/player.walking.png)
+**IDLE**
 
+![Idle](https://raw.githubusercontent.com/phillip8232/Earths-Core/master/Assets/player.idle.png)
 
+**WALK**
+
+![Walk](https://raw.githubusercontent.com/phillip8232/Earths-Core/master/Assets/player.walking.png)
+
+**Projectiles**
+
+![Projectiles](https://raw.githubusercontent.com/phillip8232/Earths-Core/master/Assets/collider.png=250x250)
 
 
 
