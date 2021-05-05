@@ -62,6 +62,7 @@ Earth's core was idea was from the hollow earth theory and I just wanted to crea
 ## Completed 
 
 - Death / restart (**Implemented**)
+- Projectile & player Collision (**Implemented**)
 
 ## Known Issues
 
