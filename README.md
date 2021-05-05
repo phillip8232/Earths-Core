@@ -89,10 +89,14 @@ Earth's core was idea was from the hollow earth theory and I just wanted to crea
 
 <img src="https://raw.githubusercontent.com/phillip8232/Earths-Core/master/Assets/collider.png" width="100" height="100" />
 
+**Winning Screen**
 
+<img src="https://raw.githubusercontent.com/phillip8232/Earths-Core/master/Assets/Win.png" width="400" height="400" />
 
 
 ## Developer Info
 
 Name : Phillip Lim
+
+Player Tested: Phillip Lim
 
