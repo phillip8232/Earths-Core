@@ -8,7 +8,7 @@ Table of content (currently not working correctly)
 
 - [Earth-core](#Earth-core)
   - [Summary](#summary)
-   - [What is the game about](##Engine System)
+   - [Engine](#engine-system)
   
 ## Summary
 
