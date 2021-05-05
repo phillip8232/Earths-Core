@@ -8,7 +8,8 @@ Table of content (currently not working correctly)
 
 - [Earth-core](#Earth-core)
   - [Summary](#summary)
-   - [Engine](#engine-system)
+   - [Engine System](#engine-system)
+   - [Gameplay snapshots / Assets / game audio](#gameplay-snapshots)
   
 ## Summary
 
