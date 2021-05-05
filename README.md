@@ -55,19 +55,20 @@ Earth's core was idea was from the hollow earth theory and I just wanted to crea
 ## Future implementation
 
 - Gunplay(**unimplemented**)
-- Wave System / rounds (**In process of completion**)
 - Enemies (**unimplemented**)
 - Powerup (**unimplemented**)
 
 ## Completed 
 
 - Death / restart (**Implemented**)
+- Winning if you survive the waves(**Implemented**)
 - Projectile & player Collision (**Implemented**)
+- Wave System / rounds (**Implemented**)
 
 ## Known Issues
 
-- Lags when too many object are on screen.
-- Sometimes you can collide with projectiles without game resetting.
+- Lags when too many Game_object are on screen.
+- Sometimes you can collide with projectiles without game resetting.(although I did give player a smaller hitbox so might not happen as often but can be replicated)
 - It's Possible to abuse the out of bounds system.
 
 ## Gameplay snapshots / Assets / game audio
@@ -94,6 +95,4 @@ Earth's core was idea was from the hollow earth theory and I just wanted to crea
 ## Developer Info
 
 Name : Phillip Lim
-
-Small note : Game has been play tested, Yes it is possible to survive.
 

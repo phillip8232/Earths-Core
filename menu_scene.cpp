@@ -1,9 +1,7 @@
 #include "menu_scene.h"
-#include "dino.h"
-#include "walking_dino.h"
+
 #include "player.h"
-#include "portal_entry.h"
-#include "portal_exit.h"
+
 #include "pattern_manager.h"
 
 Menu_Scene::Menu_Scene()
@@ -11,9 +9,7 @@ Menu_Scene::Menu_Scene()
 {
 	_red = 0;
 
-	
-	Game_Object* dino = new Dino("Dino");
-	_game_objects[dino->id()] = dino;
+
 
 	/*
 

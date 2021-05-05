@@ -22,7 +22,7 @@ Projectile::Projectile(Vector_2D spawn_position)
 Projectile::~Projectile()
 {
 }
-void Projectile::simulate_AI(Uint32, Assets*, Input*, Scene* scene)
+void Projectile::simulate_AI(Uint32, Assets*, Input*, Scene* scene,Game_Manager* game_manager)
 {
 	bool should_destroy = (_translation - _spawn_position).magnitude() > 1400;
 	if(should_destroy) this->_is_dirty = true;
@@ -41,7 +41,9 @@ void Projectile::simulate_AI(Uint32, Assets*, Input*, Scene* scene)
 	if (distance_to_player < 30.0f)
 	{
 		//gotta reset game scene when hit
-		std::cout << "You've been hit";
+		
+		
+		//game_manager->lose_life();
 		scene->reset();
 	}
 	

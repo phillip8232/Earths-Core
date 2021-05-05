@@ -1,6 +1,4 @@
 #include "game_scene.h"
-#include "dino.h"
-#include "walking_dino.h"
 #include "player.h"
 #include <iostream>
 
@@ -12,6 +10,9 @@
 #include "pattern_m4.h"
 #include "pattern_m5.h"
 #include "pattern_m6.h"
+#include "pattern_m7.h"
+#include "pattern_m8.h"
+#include "winning_time.h"
 
 Game_Scene::Game_Scene()
 	: Scene("Game")
@@ -26,13 +27,10 @@ void Game_Scene::reset()
 	Game_Object* player = new Player("Player");
 	_game_objects[player->id()] = player;
 
-	// Survive 10 waves to win
-
 
 	//WAVE1
 
 	//gotta annouce the waves <- I have not completed this sorry I was working on making the levels playable at least
-	//also the reason why im not using the spawn until end part is it overlaps with them seleves when I want to call them a second time.
 
 
 	add_game_object_to_scene(new Pattern_M5("1 ", 100, 0, Vector_2D(0, 0))); //0.1 second into the game we start the game
@@ -57,21 +55,15 @@ void Game_Scene::reset()
 	add_game_object_to_scene(new Pattern_M5("15 ", 39100, 0, Vector_2D(0, 0)));
 	add_game_object_to_scene(new Pattern_M5("16 ", 42000, 0, Vector_2D(0, 0))); //42 seconds into the game is when this wave is finished
 	
-
-	//WAVE2
 	add_game_object_to_scene(new Pattern_Manager("17 ", 48000, 10000, Vector_2D(750, 350))); //spiral
-	add_game_object_to_scene(new Pattern_M6("18 ", 60000, 10000, Vector_2D(0, 0))); //spray
+	add_game_object_to_scene(new Pattern_M6("18 ", 60000, 10000, Vector_2D(0, 0))); //60 second mark
+	add_game_object_to_scene(new Pattern_M7("19 ", 70000, 10000, Vector_2D(0, 0))); //70 second mark
+	add_game_object_to_scene(new Pattern_M8("20 ", 80000, 10000, Vector_2D(0, 0))); //80 second mark
+	
+	
+	//YOU'VE MADE IT TOO THE END
+	add_game_object_to_scene(new Winning_Time("21 ", 90000, 0, Vector_2D(0, 0))); //80 second mark
 
-
-	//WAVE3
-
-
-
-	//WAVE4
-
-
-
-	//WAVE5 FINAL WAVE
 
 	
 

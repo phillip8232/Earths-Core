@@ -151,7 +151,6 @@
     <ClCompile Include="asset.cpp" />
     <ClCompile Include="assets.cpp" />
     <ClCompile Include="circle_2D.cpp" />
-    <ClCompile Include="dino.cpp" />
     <ClCompile Include="editor.cpp" />
     <ClCompile Include="engine.cpp" />
     <ClCompile Include="game_manager.cpp" />
@@ -167,6 +166,8 @@
     <ClCompile Include="pattern_m4.cpp" />
     <ClCompile Include="pattern_m5.cpp" />
     <ClCompile Include="pattern_m6.cpp" />
+    <ClCompile Include="pattern_m7.cpp" />
+    <ClCompile Include="pattern_m8.cpp" />
     <ClCompile Include="pattern_manager.cpp" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="projectile.cpp" />
@@ -177,7 +178,9 @@
     <ClCompile Include="text.cpp" />
     <ClCompile Include="texture.cpp" />
     <ClCompile Include="vector_2D.cpp" />
-    <ClCompile Include="walking_dino.cpp" />
+    <ClCompile Include="winner.cpp" />
+    <ClCompile Include="winning_time.cpp" />
+    <ClCompile Include="you_win.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="animated_texture.h" />
@@ -185,7 +188,6 @@
     <ClInclude Include="assets.h" />
     <ClInclude Include="circle_2D.h" />
     <ClInclude Include="configuration.h" />
-    <ClInclude Include="dino.h" />
     <ClInclude Include="editor.h" />
     <ClInclude Include="engine.h" />
     <ClInclude Include="game_manager.h" />
@@ -200,6 +202,8 @@
     <ClInclude Include="pattern_m4.h" />
     <ClInclude Include="pattern_m5.h" />
     <ClInclude Include="pattern_m6.h" />
+    <ClInclude Include="pattern_m7.h" />
+    <ClInclude Include="pattern_m8.h" />
     <ClInclude Include="pattern_manager.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="projectile.h" />
@@ -211,7 +215,9 @@
     <ClInclude Include="text.h" />
     <ClInclude Include="texture.h" />
     <ClInclude Include="vector_2D.h" />
-    <ClInclude Include="walking_dino.h" />
+    <ClInclude Include="winner.h" />
+    <ClInclude Include="winning_time.h" />
+    <ClInclude Include="you_win.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="..\..\9157_phillip_tut6\Game\Game.rc" />

@@ -45,6 +45,12 @@ Assets::Assets(SDL_Renderer* renderer)
 		_assets[texture->id()] = texture;
 	}
 
+	//create you win Texture
+	{
+		Texture* texture = new Texture("Texture.Win" , "Assets/Win.png", renderer );
+		_assets[texture->id()] = texture;
+	}
+
 
 
 	// Create music sound

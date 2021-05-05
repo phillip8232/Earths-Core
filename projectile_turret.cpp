@@ -19,7 +19,7 @@ Projectile_Turret::Projectile_Turret(Arguments_Projectile_Turret args)
 Projectile_Turret::~Projectile_Turret()
 {
 }
-void Projectile_Turret::simulate_AI(Uint32 milliseconds_to_simulate, Assets*, Input*, Scene* scene)
+void Projectile_Turret::simulate_AI(Uint32 milliseconds_to_simulate, Assets*, Input*, Scene* scene, Game_Manager* game_manager)
 {
 	_ms_until_next_shot -= milliseconds_to_simulate;
 	bool should_shoot = _ms_until_next_shot <= 0;

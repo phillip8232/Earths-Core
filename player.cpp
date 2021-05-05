@@ -36,7 +36,7 @@ void Player::render(Uint32 milliseconds_to_simulate, Assets* assets, SDL_Rendere
 	Game_Object::render(milliseconds_to_simulate, assets, renderer, config, scene);
 }
 
-void Player::simulate_AI(Uint32, Assets* assets, Input* input, Scene* scene)
+void Player::simulate_AI(Uint32, Assets* assets, Input* input, Scene* scene, Game_Manager* game_manager)
 {
 	switch(_state.top())
 	{
@@ -77,7 +77,7 @@ void Player::simulate_AI(Uint32, Assets* assets, Input* input, Scene* scene)
 	{
 		_translation = Vector_2D(750, 500);
 	}
-	//dying when hit by projectile
+	
 
 
 	

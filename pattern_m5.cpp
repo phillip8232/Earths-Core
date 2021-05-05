@@ -14,7 +14,7 @@ Pattern_M5::Pattern_M5(std::string id, int ms_until_start, int ms_until_end, Vec
 Pattern_M5::~Pattern_M5()
 {
 }
-void Pattern_M5::simulate_AI(Uint32 milliseconds_to_simulate, Assets*, Input*, Scene* scene)
+void Pattern_M5::simulate_AI(Uint32 milliseconds_to_simulate, Assets*, Input*, Scene* scene, Game_Manager* game_manager)
 {
 	_ms_until_start -= milliseconds_to_simulate;
 	bool should_start = _ms_until_start <= 0;

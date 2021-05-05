@@ -12,6 +12,8 @@
 #include "configuration.h"
 #include "menu_scene.h"
 #include "scene_manager.h"
+#include "game_manager.h"
+#include "you_win.h"
 
 // include, test that it works with a simple test.
 
@@ -23,11 +25,13 @@ int main(void)
 	Engine*        engine = new Engine("Game", config);
 	Assets*		   assets = new Assets(engine->renderer());
 	Input*		   input  = new Input();
-	Editor*		   editor = new Editor(L"Game"); 
+	//Editor*		   editor = new Editor(L"Game"); 
 	Scene_manager* scene_manager = new Scene_manager();
+	Game_Manager* game_manager = new Game_Manager();
 
 	scene_manager->add_scene(new Game_Scene());
 	scene_manager->add_scene(new Game_Over_Scene());
+	scene_manager->add_scene(new You_Win());
 	scene_manager->set_current_scene("Game");
 
 	
@@ -45,10 +49,10 @@ int main(void)
 
 		
 
-		
+		game_manager->update(scene_manager);
 		input->get_input();
-		editor->update(input, scene_manager->current_scene(), config);
-		engine->simulate(previous_frame_duration, assets, scene_manager->current_scene(), input, config);
+		//editor->update(input, scene_manager->current_scene(), config);
+		engine->simulate(previous_frame_duration, assets, scene_manager->current_scene(), input, config, game_manager);
 
 		const Uint32 current_time_ms   = SDL_GetTicks();
 		const Uint32 frame_duration_ms = current_time_ms - frame_start_time_ms;

@@ -19,7 +19,7 @@ public:
 	Projectile_Turret(Arguments_Projectile_Turret args);
 	~Projectile_Turret();
 
-	virtual void simulate_AI(Uint32 milliseconds_to_simulate, Assets* assets, Input* input, Scene* scene) override;
+	virtual void simulate_AI(Uint32 milliseconds_to_simulate, Assets* assets, Input* input, Scene* scene, Game_Manager* game_manager) override;
 
 private:
 	Vector_2D _direction_to_shoot;

@@ -14,7 +14,7 @@ Pattern_Manager::Pattern_Manager(std::string id, int ms_until_start, int ms_unti
 Pattern_Manager::~Pattern_Manager()
 {
 }
-void Pattern_Manager::simulate_AI(Uint32 milliseconds_to_simulate, Assets*, Input*, Scene* scene)
+void Pattern_Manager::simulate_AI(Uint32 milliseconds_to_simulate, Assets*, Input*, Scene* scene, Game_Manager* game_manager)
 {
 	_ms_until_start -= milliseconds_to_simulate;
 	bool should_start = _ms_until_start <= 0;
