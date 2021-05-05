@@ -1,4 +1,2 @@
-﻿  game_scene.cpp
-  you_win.cpp
-  Generating Code...
+﻿  winner.cpp
   Game.vcxproj -> D:\AIT\Basic Game Engine Programming\9157_earths_core\Game\x64\Debug\Game.exe

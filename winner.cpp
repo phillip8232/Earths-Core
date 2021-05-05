@@ -7,8 +7,10 @@
 Winner::Winner(std::string id)
 	: Game_Object(id, "Texture.Win")
 {
-	
-	_translation = Vector_2D(800, 400);
+	_width = 1600;
+	_height = 800;
+	_translation = Vector_2D(0, 0);
+
 }
 Winner::~Winner()
 {
