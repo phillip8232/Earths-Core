@@ -2,6 +2,8 @@
 
 # Earth-core
 
+Links - [phillip8232/Earths-Core: SDL Game. (github.com)](https://github.com/phillip8232/Earths-Core)
+
 [TOC]
 
 ## Summary

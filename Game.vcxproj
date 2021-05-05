@@ -166,6 +166,7 @@
     <ClCompile Include="pattern_m3.cpp" />
     <ClCompile Include="pattern_m4.cpp" />
     <ClCompile Include="pattern_m5.cpp" />
+    <ClCompile Include="pattern_m6.cpp" />
     <ClCompile Include="pattern_manager.cpp" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="projectile.cpp" />
@@ -198,6 +199,7 @@
     <ClInclude Include="pattern_m3.h" />
     <ClInclude Include="pattern_m4.h" />
     <ClInclude Include="pattern_m5.h" />
+    <ClInclude Include="pattern_m6.h" />
     <ClInclude Include="pattern_manager.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="projectile.h" />

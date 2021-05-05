@@ -105,6 +105,9 @@
     <ClCompile Include="pattern_m5.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="pattern_m6.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
@@ -198,6 +201,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="pattern_m5.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pattern_m6.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
