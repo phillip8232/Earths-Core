@@ -24,25 +24,31 @@ void Pattern_M6::simulate_AI(Uint32 milliseconds_to_simulate, Assets*, Input*, S
 		args.direction_to_shoot = 0;
 		args.ms_between_shots = 250;
 		args.number_of_shots = _ms_until_end / args.ms_between_shots;
-		args.speed_of_projectile = 0.25f;
+		args.speed_of_projectile = 0.38f;
 		args.rotation_between_shots = 15.f;
 
-		args.id = "Projectile_Turret0";
-		args.spawn_position = _translation;
+
+		args.rotation_between_shots = 15.f;
+		args.id = "right-down-spray2";
+		args.spawn_position = Vector_2D(750, 350);
 		scene->add_game_object_to_scene(new Projectile_Turret(args));
 
-		args.direction_to_shoot = 90;
-		args.id = "Projectile_Turret1";
+		args.rotation_between_shots = -15.f;
+		args.id = "left-down-spray2";
+		args.spawn_position = Vector_2D(750, 350);
 		scene->add_game_object_to_scene(new Projectile_Turret(args));
-
+		//other way
 		args.direction_to_shoot = 180;
-		args.id = "Projectile_Turret2";
+
+		args.rotation_between_shots = 15.f;
+		args.id = "right-down-spray5";
+		args.spawn_position = Vector_2D(750, 350);
 		scene->add_game_object_to_scene(new Projectile_Turret(args));
 
-		args.direction_to_shoot = 270;
-		args.id = "Projectile_Turret3";
+		args.rotation_between_shots = -15.f;
+		args.id = "left-down-spray5";
+		args.spawn_position = Vector_2D(750, 350);
 		scene->add_game_object_to_scene(new Projectile_Turret(args));
-
 
 
 		_started = true;

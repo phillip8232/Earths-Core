@@ -66,8 +66,9 @@ Earth's core was idea was from the hollow earth theory and I just wanted to crea
 
 ## Known Issues
 
-- Lags when too many object are on screen
+- Lags when too many object are on screen.
 - Sometimes you can collide with projectiles without game resetting.
+- It's Possible to abuse the out of bounds system.
 
 ## Gameplay snapshots / Assets / game audio
 
@@ -93,4 +94,6 @@ Earth's core was idea was from the hollow earth theory and I just wanted to crea
 ## Developer Info
 
 Name : Phillip Lim
+
+Small note : Game has been play tested, Yes it is possible to survive.
 

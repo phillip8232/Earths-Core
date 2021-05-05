@@ -59,8 +59,8 @@ void Game_Scene::reset()
 	
 
 	//WAVE2
-	add_game_object_to_scene(new Pattern_M6("17 ", 43000, 0, Vector_2D(200, 200)));
-
+	add_game_object_to_scene(new Pattern_Manager("17 ", 48000, 10000, Vector_2D(750, 350))); //spiral
+	add_game_object_to_scene(new Pattern_M6("18 ", 60000, 10000, Vector_2D(0, 0))); //spray
 
 
 	//WAVE3
