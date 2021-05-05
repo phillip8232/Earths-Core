@@ -19,7 +19,7 @@ Player::Player(std::string id)
 
 	_translation = Vector_2D(750, 500);
 
-	_collider.set_radius(_width / 5.0f);
+	_collider.set_radius(_width / 10.0f);
 	_collider.set_translation(Vector_2D(_width / 2.0f, (float)_height));
 
 	_state.push(State::Idle);

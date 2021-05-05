@@ -2,7 +2,7 @@
 #include "dino.h"
 #include "walking_dino.h"
 #include "player.h"
-
+#include <iostream>
 
 //patterns
 #include "pattern_manager.h"
@@ -10,6 +10,7 @@
 #include "pattern_m2.h"
 #include "pattern_m3.h"
 #include "pattern_m4.h"
+#include "pattern_m5.h"
 
 Game_Scene::Game_Scene()
 	: Scene("Game")
@@ -36,21 +37,27 @@ void Game_Scene::reset()
 
 
 	//WAVE1
-	//gotta annouce the waves 
-	add_game_object_to_scene(new Pattern_M1("1 ", 100, 0, Vector_2D(0, 0)));
-	add_game_object_to_scene(new Pattern_M2("2 ", 200, 0, Vector_2D(0, 0)));
 
-	add_game_object_to_scene(new Pattern_M1("3 ", 1000, 0, Vector_2D(0, 0)));
-	add_game_object_to_scene(new Pattern_M2("4 ", 1200, 0, Vector_2D(0, 0)));
-
-	add_game_object_to_scene(new Pattern_M1("5 ", 3000, 1000, Vector_2D(0, 0)));
-	add_game_object_to_scene(new Pattern_M2("6 ", 4000, 0, Vector_2D(0, 0)));
-
-	add_game_object_to_scene(new Pattern_M3("7 ", 6000, 2000, Vector_2D(0, 0)));
-	add_game_object_to_scene(new Pattern_M4("8 ", 6000, 3000, Vector_2D(0, 0)));
+	//gotta annouce the waves with a game object
 
 
+	add_game_object_to_scene(new Pattern_M5("1 ", 100, 0, Vector_2D(0, 0)));
+	add_game_object_to_scene(new Pattern_M5("2 ", 3100, 0, Vector_2D(0, 0)));
+	add_game_object_to_scene(new Pattern_M5("3 ", 6100, 0, Vector_2D(0, 0)));
+	add_game_object_to_scene(new Pattern_M5("4 ", 9100, 0, Vector_2D(0, 0)));
 
+	add_game_object_to_scene(new Pattern_M1("5 ", 15000, 0, Vector_2D(0, 0)));
+	add_game_object_to_scene(new Pattern_M2("6 ", 15100, 0, Vector_2D(0, 0)));
+
+	add_game_object_to_scene(new Pattern_M1("7 ", 16000, 0, Vector_2D(0, 0)));
+	add_game_object_to_scene(new Pattern_M2("8 ", 16200, 0, Vector_2D(0, 0)));
+
+	add_game_object_to_scene(new Pattern_M1("9 ", 19000, 1000, Vector_2D(0, 0)));
+	add_game_object_to_scene(new Pattern_M2("10 ", 20000, 0, Vector_2D(0, 0)));
+
+	add_game_object_to_scene(new Pattern_M3("11 ", 23000, 6000, Vector_2D(0, 0)));
+	add_game_object_to_scene(new Pattern_M4("12 ", 26000, 5000, Vector_2D(0, 0))); //around 30 sec mark is when this wave finishes
+	
 
 	//WAVE2
 
