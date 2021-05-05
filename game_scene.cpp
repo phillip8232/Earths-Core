@@ -15,10 +15,7 @@
 Game_Scene::Game_Scene()
 	: Scene("Game")
 {
-
 	reset();
-
-	
 }
 
 void Game_Scene::reset()
@@ -28,35 +25,35 @@ void Game_Scene::reset()
 	Game_Object* player = new Player("Player");
 	_game_objects[player->id()] = player;
 
-	//Game_Object* dino = new Dino("Dino");
-	//_game_objects[dino->id()] = dino;
-
-
-
 	// Survive 10 waves to win
 
 
 	//WAVE1
 
-	//gotta annouce the waves with a game object
+	//gotta annouce the waves <- I have not completed this sorry I was working on making the levels playable at least
 
 
-	add_game_object_to_scene(new Pattern_M5("1 ", 100, 0, Vector_2D(0, 0)));
+	add_game_object_to_scene(new Pattern_M5("1 ", 100, 0, Vector_2D(0, 0))); //0.1 second into the game we start the game
 	add_game_object_to_scene(new Pattern_M5("2 ", 3100, 0, Vector_2D(0, 0)));
 	add_game_object_to_scene(new Pattern_M5("3 ", 6100, 0, Vector_2D(0, 0)));
 	add_game_object_to_scene(new Pattern_M5("4 ", 9100, 0, Vector_2D(0, 0)));
 
-	add_game_object_to_scene(new Pattern_M1("5 ", 15000, 0, Vector_2D(0, 0)));
+	add_game_object_to_scene(new Pattern_M1("5 ", 15000, 0, Vector_2D(0, 0))); 
 	add_game_object_to_scene(new Pattern_M2("6 ", 15100, 0, Vector_2D(0, 0)));
 
 	add_game_object_to_scene(new Pattern_M1("7 ", 16000, 0, Vector_2D(0, 0)));
-	add_game_object_to_scene(new Pattern_M2("8 ", 16200, 0, Vector_2D(0, 0)));
+	add_game_object_to_scene(new Pattern_M2("8 ", 16200, 0, Vector_2D(0, 0))); // 16 seconds into the game
 
 	add_game_object_to_scene(new Pattern_M1("9 ", 19000, 1000, Vector_2D(0, 0)));
 	add_game_object_to_scene(new Pattern_M2("10 ", 20000, 0, Vector_2D(0, 0)));
 
 	add_game_object_to_scene(new Pattern_M3("11 ", 23000, 6000, Vector_2D(0, 0)));
 	add_game_object_to_scene(new Pattern_M4("12 ", 26000, 5000, Vector_2D(0, 0))); //around 30 sec mark is when this wave finishes
+
+	add_game_object_to_scene(new Pattern_M5("13 ", 34100, 0, Vector_2D(0, 0)));
+	add_game_object_to_scene(new Pattern_M5("14 ", 37100, 0, Vector_2D(0, 0)));
+	add_game_object_to_scene(new Pattern_M5("15 ", 39100, 0, Vector_2D(0, 0)));
+	add_game_object_to_scene(new Pattern_M5("16 ", 42000, 0, Vector_2D(0, 0))); //42 seconds into the game is when this wave is finished
 	
 
 	//WAVE2
@@ -91,8 +88,8 @@ void Game_Scene::reset()
 
 
 
-	//WAVE10
-	//this is the final wave annouce that and when they get past here they win
+	//WAVE10 THE FINAL WAVE
+	
 
 }
 
