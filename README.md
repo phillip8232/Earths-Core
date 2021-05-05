@@ -2,7 +2,7 @@
 
 # Earth-core
 
-Links - [phillip8232/Earths-Core: SDL Game. (github.com)](https://github.com/phillip8232/Earths-Core)
+GitHub Link - [phillip8232/Earths-Core: SDL Game. (github.com)](https://github.com/phillip8232/Earths-Core)
 
 [TOC]
 
@@ -49,15 +49,18 @@ Earth's core was idea was from the hollow earth theory and I just wanted to crea
 
 ## Future implementation
 
-- Gunplay
-- Wave System / rounds
-- Enemies
-- Powerup
-- Death / restart
+- Gunplay(**unimplemented**)
+- Wave System / rounds (**In process of completion**)
+- Enemies (**unimplemented**)
+- Powerup (**unimplemented**)
+
+## Completed 
+
+- Death / restart (**Implemented**)
 
 ## Known Issues
 
-
+- Lags when too many object are on screen
 
 ## Gameplay snapshots
 
