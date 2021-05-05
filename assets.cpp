@@ -7,29 +7,7 @@
 
 Assets::Assets(SDL_Renderer* renderer)
 {
-	// Cache Dino Texture.
-	{
-		Texture* texture = new Texture("Texture.Dino", "Assets/dino.png", renderer);
-		_assets[texture->id()] = texture;
-	}
 
-	{
-		Texture* texture = new Texture("Texture.Square", "Assets/square.png", renderer);
-		_assets[texture->id()] = texture;
-	}
-	
-	// Cache Dino Walking Texture.
-	{
-		const int frame_count                    = 10;
-		const Uint32 frame_duration_milliseconds = 100;
-		Animated_Texture* texture   = new Animated_Texture(
-			"Texture.Dino.Walking",
-			"Assets/dino.walking.png", 
-			renderer,
-			frame_count, 
-			frame_duration_milliseconds);
-		_assets[texture->id()] = texture;
-	}
 
 	// Create player walking texture.
 	{
@@ -88,23 +66,6 @@ Assets::Assets(SDL_Renderer* renderer)
 		Sound* sound = new Sound("Sound.Running", "Assets/running.wav");
 		_assets[sound->id()] = sound;
 	}
-
-	// Create portal entry texture.
-	{
-		const int frame_count = 8;
-		const Uint32 frame_duration_milliseconds = 100;
-		Asset* animated_texture = new Animated_Texture("Texture.Portal.Entry", "Assets/portal.green.png", renderer, frame_count, frame_duration_milliseconds);
-		_assets[animated_texture->id()] = animated_texture;
-	}
-
-	// Create portal exit texture.
-	{
-		const int frame_count = 8;
-		const Uint32 frame_duration_milliseconds = 100;
-		Asset* animated_texture = new Animated_Texture("Texture.Portal.Exit", "Assets/portal.purple.png", renderer, frame_count, frame_duration_milliseconds);
-		_assets[animated_texture->id()] = animated_texture;
-	}
-	
 }
 
 Assets::~Assets()

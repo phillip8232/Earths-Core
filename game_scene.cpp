@@ -11,6 +11,7 @@
 #include "pattern_m3.h"
 #include "pattern_m4.h"
 #include "pattern_m5.h"
+#include "pattern_m6.h"
 
 Game_Scene::Game_Scene()
 	: Scene("Game")
@@ -58,7 +59,7 @@ void Game_Scene::reset()
 	
 
 	//WAVE2
-
+	add_game_object_to_scene(new Pattern_M6("17 ", 43000, 0, Vector_2D(200, 200)));
 
 
 
