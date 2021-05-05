@@ -8,7 +8,8 @@ Table of content (currently not working correctly)
 
 - [Earth-core](#Earth-core)
   - [Summary](#summary)
-
+    - [What is the game about] (#What-is-the-game-about)
+  
 ## Summary
 
 Earth-core is a 2D game that uses, C++ with a mix of many SDL libraries to create a game.
