@@ -8,7 +8,6 @@ GitHub Link - [phillip8232/Earths-Core: SDL Game. (github.com)](https://github.c
   - [Summary](#summary)
    - [Engine System](#engine-system)
    - [Gameplay snapshots / Assets / game audio](#gameplay-snapshots--assets--game-audio)
-  
 ## Summary
 
 Earth-core is a 2D game that uses, C++ with a mix of many SDL libraries to create a game.
